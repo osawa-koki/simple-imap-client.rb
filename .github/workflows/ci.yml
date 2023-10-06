@@ -1,0 +1,35 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - issues/*
+  pull_request:
+    branches:
+      - main
+      - develop
+      - issues/*
+
+jobs:
+  ci:
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        ruby-version: [ 3.2.2 ]
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Use Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby-version }}
+    - name: Install dependencies
+      run: |
+        gem install bundler
+        bundle install
+    - name: Run linter
+      run: rubocop
+    # - name: Run tests
+    #   run: bundle exec rspec
