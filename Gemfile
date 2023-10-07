@@ -2,6 +2,7 @@
 
 source 'https://rubygems.org'
 
+gem 'net-imap', '~> 0.3.6'
 gem 'dotenv', '~> 2.8.1'
 
 group :development do
