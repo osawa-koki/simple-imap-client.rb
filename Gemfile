@@ -2,8 +2,8 @@
 
 source 'https://rubygems.org'
 
-gem 'net-imap', '~> 0.3.6'
 gem 'dotenv', '~> 2.8.1'
+gem 'net-imap', '~> 0.3.6'
 
 group :development do
   gem 'rubocop', '~> 1.56.0', require: false
