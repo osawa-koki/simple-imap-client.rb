@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 
 gem 'dotenv', '~> 2.8.1'
-gem 'net-imap', '~> 0.3.6'
+gem 'net-imap', '~> 0.4.2'
 
 group :development do
   gem 'rubocop', '~> 1.57.1', require: false
