@@ -7,7 +7,7 @@ GEM
     dotenv (2.8.1)
     json (2.6.3)
     language_server-protocol (3.17.0.3)
-    net-imap (0.3.7)
+    net-imap (0.4.2)
       date
       net-protocol
     net-protocol (0.2.1)
@@ -44,7 +44,7 @@ PLATFORMS
 
 DEPENDENCIES
   dotenv (~> 2.8.1)
-  net-imap (~> 0.3.6)
+  net-imap (~> 0.4.2)
   rubocop (~> 1.57.1)
 
 BUNDLED WITH
