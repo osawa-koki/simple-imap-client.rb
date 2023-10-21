@@ -1,0 +1,27 @@
+name: exec
+
+on:
+  push:
+    tags: ['v-*']
+
+jobs:
+  ci:
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        ruby-version: [ 3.2.2 ]
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Use Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby-version }}
+    - name: Create dotenv file
+      run: echo $'${{ secrets.DOTENV }}' > .env
+    - name: Install dependencies
+      run: |
+        gem install bundler
+        bundle install
+    - name: Exec program
+      run: bundle exec ruby ./app/main.rb
