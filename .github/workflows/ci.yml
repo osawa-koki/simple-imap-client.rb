@@ -20,7 +20,7 @@ jobs:
         ruby-version: [ 3.2.2 ]
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Use Ruby
       uses: ruby/setup-ruby@v1
       with:
